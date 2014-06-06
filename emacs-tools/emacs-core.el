@@ -1,5 +1,5 @@
 ;; emacs-core.el
-;; Copyright (C) 2013 -- Alex Wood
+;; Copyright (C) 2014 -- Alex Wood
 ;;
 ;; Version 1.0
 ;;
