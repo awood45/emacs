@@ -23,3 +23,5 @@
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
 (add-to-list 'load-path "~/emacs-tools/")
+
+(require 'aw-env-settings)
