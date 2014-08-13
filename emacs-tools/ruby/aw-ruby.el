@@ -20,7 +20,7 @@
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
 (require 'aw-ruby-packages)
-(require 'aw-ruby-configuration)
+(require 'aw-ruby-settings)
 (require 'aw-ruby-keybindings)
 
 (provide 'aw-ruby)
