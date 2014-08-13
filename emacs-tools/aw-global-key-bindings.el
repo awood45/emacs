@@ -1,7 +1,7 @@
 ;; aw-global-key-bindings.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Global environment settings are specified here.
+;; Global key bindings are specified here.
 ;;
 ;;
 ;; This file is not part of GNU Emacs.

@@ -1,10 +1,7 @@
-;; emacs-core.el
+;; aw-ruby.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Version 1.0
-;;
-;; This is the core file of my Emacs configuration setup. It loads in
-;; any other files that I need.
+;; Parent of Ruby config files.
 ;;
 ;;
 ;; This file is not part of GNU Emacs.
@@ -22,12 +19,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
-;; Global Files
-(add-to-list 'load-path "~/emacs-tools/")
-(require 'aw-env-settings)
-(require 'aw-global-key-bindings)
-(require 'aw-package-loader)
+(require 'aw-ruby-packages)
 
-;; Ruby Development
-(add-to-list 'load-path "~/emacs-tools/ruby")
-(require 'aw-ruby)
+(provide 'aw-ruby)

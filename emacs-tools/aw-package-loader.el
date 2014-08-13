@@ -1,10 +1,7 @@
-;; emacs-core.el
+;; aw-package-loader.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Version 1.0
-;;
-;; This is the core file of my Emacs configuration setup. It loads in
-;; any other files that I need.
+;; Functions used to download and use third party packages are defined here.
 ;;
 ;;
 ;; This file is not part of GNU Emacs.
@@ -22,12 +19,18 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
-;; Global Files
-(add-to-list 'load-path "~/emacs-tools/")
-(require 'aw-env-settings)
-(require 'aw-global-key-bindings)
-(require 'aw-package-loader)
+(require 'cl)
 
-;; Ruby Development
-(add-to-list 'load-path "~/emacs-tools/ruby")
-(require 'aw-ruby)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+
+(defun install-package-if-missing (package)
+  (unless (package-installed-p package)
+    (package-refresh-contents)
+    (package-install package)))
+
+(provide 'aw-package-loader)
