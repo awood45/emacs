@@ -1,10 +1,7 @@
-;; emacs-core.el
+;; aw-org-export-latex.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Version 1.0
-;;
-;; This is the core file of my Emacs configuration setup. It loads in
-;; any other files that I need.
+;; Define how to export to LaTeX
 ;;
 ;;
 ;; This file is not part of GNU Emacs.
@@ -22,17 +19,16 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
-;; Global Files
-(add-to-list 'load-path "~/emacs-tools/")
-(require 'aw-env-settings)
-(require 'aw-global-key-bindings)
-(require 'aw-package-loader)
-(require 'aw-misc-imports)
+(require 'ox-latex)
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-;; Ruby Development
-(add-to-list 'load-path "~/emacs-tools/ruby")
-(require 'aw-ruby)
-
-;; Org Mode
-(add-to-list 'load-path "~/emacs-tools/org")
-(require 'aw-org)
+(provide 'aw-org-export-latex)

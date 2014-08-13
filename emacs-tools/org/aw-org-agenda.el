@@ -1,10 +1,7 @@
-;; emacs-core.el
+;; aw-org-agenda.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Version 1.0
-;;
-;; This is the core file of my Emacs configuration setup. It loads in
-;; any other files that I need.
+;; Org Agenda related customizations.
 ;;
 ;;
 ;; This file is not part of GNU Emacs.
@@ -22,17 +19,20 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
-;; Global Files
-(add-to-list 'load-path "~/emacs-tools/")
-(require 'aw-env-settings)
-(require 'aw-global-key-bindings)
-(require 'aw-package-loader)
-(require 'aw-misc-imports)
+;; Make it Easy to Enter Agenda
+(global-set-key "\C-ca" 'org-agenda)
 
-;; Ruby Development
-(add-to-list 'load-path "~/emacs-tools/ruby")
-(require 'aw-ruby)
+;; org-mode TODO Keywords
+(setq org-todo-keywords
+      '((type "BACKLOG(b)" "TODO(t)" "WAITING(w)" "WIP(i)"
+              "|" "DONE(d)" "CANCELLED(c)")
+        (sequence "MAYBE(m)" "PROJECT(p)"
+                  "|" "FINISHED(f) ABANDONED(a)")
+        (sequence "APPT(a)"
+                  "|" "DONE" "CANCELLED")))
 
-;; Org Mode
-(add-to-list 'load-path "~/emacs-tools/org")
-(require 'aw-org)
+;; Alternate binding for moving Org tasks up and down.
+(define-key org-mode-map (kbd "M-p") 'org-metaup)
+(define-key org-mode-map (kbd "M-n") 'org-metadown)
+
+(provide 'aw-org-agenda)
