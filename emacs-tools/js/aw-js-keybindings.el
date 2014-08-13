@@ -1,10 +1,7 @@
-;; emacs-core.el
+;; aw-js-packages.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Version 1.0
-;;
-;; This is the core file of my Emacs configuration setup. It loads in
-;; any other files that I need.
+;; JavaScript Key Bindings
 ;;
 ;;
 ;; This file is not part of GNU Emacs.
@@ -22,21 +19,10 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
-;; Global Files
-(add-to-list 'load-path "~/emacs-tools/")
-(require 'aw-env-settings)
-(require 'aw-global-key-bindings)
-(require 'aw-package-loader)
-(require 'aw-misc-imports)
+;; CoffeeScript Key Customization
+(eval-after-load 'coffee-mode
+  '(progn
+     (define-key coffee-mode-map (kbd "C-c C-c c") 'coffee-compile-buffer)
+     (define-key coffee-mode-map (kbd "C-c C-c r") 'coffee-repl)))
 
-;; Ruby Development
-(add-to-list 'load-path "~/emacs-tools/ruby")
-(require 'aw-ruby)
-
-;; JavaScript Development
-(add-to-list 'load-path "~/emacs-tools/js")
-(require 'aw-js)
-
-;; Org Mode
-(add-to-list 'load-path "~/emacs-tools/org")
-(require 'aw-org)
+(provide 'aw-js-keybindings)

@@ -1,10 +1,7 @@
-;; emacs-core.el
+;; aw-js-packages.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Version 1.0
-;;
-;; This is the core file of my Emacs configuration setup. It loads in
-;; any other files that I need.
+;; JavaScript Package Imports
 ;;
 ;;
 ;; This file is not part of GNU Emacs.
@@ -22,21 +19,20 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
-;; Global Files
-(add-to-list 'load-path "~/emacs-tools/")
-(require 'aw-env-settings)
-(require 'aw-global-key-bindings)
-(require 'aw-package-loader)
-(require 'aw-misc-imports)
+;; JSON Mode
+(install-package-if-missing 'json-mode)
+(require 'json-mode)
 
-;; Ruby Development
-(add-to-list 'load-path "~/emacs-tools/ruby")
-(require 'aw-ruby)
+;; JavaScript IDE Mode
+(install-package-if-missing 'js2-mode)
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
+(setq js2-basic-offset 2)
+(setq js2-bounce-indent-p t)
 
-;; JavaScript Development
-(add-to-list 'load-path "~/emacs-tools/js")
-(require 'aw-js)
+;; CoffeeScript Mode
+(install-package-if-missing 'coffee-mode)
+(require 'coffee-mode)
+(setq coffee-tab-width 2)
 
-;; Org Mode
-(add-to-list 'load-path "~/emacs-tools/org")
-(require 'aw-org)
+(provide 'aw-js-packages)
