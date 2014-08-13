@@ -25,3 +25,4 @@
 (add-to-list 'load-path "~/emacs-tools/")
 
 (require 'aw-env-settings)
+(require 'aw-global-key-bindings)
