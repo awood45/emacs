@@ -48,5 +48,19 @@
 ;; No backup files.
 (setq make-backup-files nil)
 
+;; Turn on Column Numbering
+(column-number-mode t)
+
+;; Turn off the Tool Bar
+(tool-bar-mode -1)
+
+;; Turn off the Menu Bar
+(menu-bar-mode -1)
+
+;; Turn off the Scroll Bar
+(scroll-bar-mode -1)
+
+;; Turn off Tool Tips
+(tooltip-mode -1)
 
 (provide 'aw-env-settings)

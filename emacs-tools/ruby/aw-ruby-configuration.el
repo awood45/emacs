@@ -28,4 +28,7 @@
 (add-to-list 'auto-mode-alist '("Capfile$"     . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . enh-ruby-mode))
 
+;; Do not compile SCSS files on saving.
+(setq scss-compile-at-save nil)
+
 (provide 'aw-ruby-configuration)
