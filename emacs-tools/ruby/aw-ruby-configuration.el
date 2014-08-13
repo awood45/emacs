@@ -1,7 +1,7 @@
-;; aw-ruby.el
+;; aw-ruby-configuration.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Parent of Ruby config files.
+;; General Ruby configuration.
 ;;
 ;;
 ;; This file is not part of GNU Emacs.
@@ -19,8 +19,13 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
-(require 'aw-ruby-packages)
-(require 'aw-ruby-configuration)
-(require 'aw-ruby-keybindings)
+;; Auto-Mode Configuration - Prefer Enhanced Ruby Mode
+(add-to-list 'auto-mode-alist '("\\.rake$"     . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$"  . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$"       . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$"    . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$"     . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$"     . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile$" . enh-ruby-mode))
 
-(provide 'aw-ruby)
+(provide 'aw-ruby-configuration)

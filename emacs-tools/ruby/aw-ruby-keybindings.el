@@ -1,7 +1,7 @@
-;; aw-ruby.el
+;; aw-ruby-keybindings.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
-;; Parent of Ruby config files.
+;; Custom Ruby keybindings.
 ;;
 ;;
 ;; This file is not part of GNU Emacs.
@@ -19,8 +19,14 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
-(require 'aw-ruby-packages)
-(require 'aw-ruby-configuration)
-(require 'aw-ruby-keybindings)
+;; Key Customizations
+(eval-after-load 'enh-ruby-mode
+  '(progn
+     (define-key enh-ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+     (define-key enh-ruby-mode-map (kbd "C-j") 'reindent-then-newline-and-indent)
+     (define-key enh-ruby-mode-map (kbd "C-c l") "lambda")
+     (define-key enh-ruby-mode-map (kbd "C-c C-t") 'toggle-buffer)
+     (define-key enh-ruby-mode-map (kbd "C-x C-t") 'toggle-style)
+     (define-key enh-ruby-mode-map (kbd "C-c C-a") 'inf-ruby-console-auto)))
 
-(provide 'aw-ruby)
+(provide 'aw-ruby-keybindings)
