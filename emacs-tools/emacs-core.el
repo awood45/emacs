@@ -27,6 +27,7 @@
 (require 'aw-env-settings)
 (require 'aw-global-key-bindings)
 (require 'aw-package-loader)
+(require 'aw-misc-imports)
 
 ;; Ruby Development
 (add-to-list 'load-path "~/emacs-tools/ruby")
