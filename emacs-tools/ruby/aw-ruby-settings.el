@@ -1,4 +1,4 @@
-;; aw-ruby-configuration.el
+;; aw-ruby-settings.el
 ;; Copyright (C) 2014 -- Alex Wood
 ;;
 ;; General Ruby configuration.
@@ -31,4 +31,4 @@
 ;; Do not compile SCSS files on saving.
 (setq scss-compile-at-save nil)
 
-(provide 'aw-ruby-configuration)
+(provide 'aw-ruby-settings)
