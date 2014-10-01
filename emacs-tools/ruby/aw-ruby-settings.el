@@ -31,4 +31,7 @@
 ;; Do not compile SCSS files on saving.
 (setq scss-compile-at-save nil)
 
+;; Do NOT deep indent for Ruby hashes/parens.
+(setq enh-ruby-deep-indent-paren nil)
+
 (provide 'aw-ruby-settings)
