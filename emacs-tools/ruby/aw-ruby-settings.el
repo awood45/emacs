@@ -34,4 +34,7 @@
 ;; Do NOT deep indent for Ruby hashes/parens.
 (setq enh-ruby-deep-indent-paren nil)
 
+;; Web Mode Support for ERB
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
 (provide 'aw-ruby-settings)

@@ -60,4 +60,8 @@
 (install-package-if-missing 'go-mode)
 (require 'go-mode)
 
+;; Web Mode
+(install-package-if-missing 'web-mode)
+(require 'web-mode)
+
 (provide 'aw-misc-imports)
