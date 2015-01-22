@@ -28,6 +28,9 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
 (setq js2-bounce-indent-p t)
+(defun fix-js2-tab ()
+  (setq js2-basic-offset 2))
+(add-hook 'js2-mode-hook 'fix-js2-tab)
 
 ;; CoffeeScript Mode
 (install-package-if-missing 'coffee-mode)
