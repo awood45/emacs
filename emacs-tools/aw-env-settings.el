@@ -30,6 +30,7 @@
 
 ;; Default to tab width of two spaces.
 (setq-default tab-width 2)
+(setq standard-indent 2)
 
 ;; Show matching parens
 (show-paren-mode t)

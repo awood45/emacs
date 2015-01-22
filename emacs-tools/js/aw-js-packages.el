@@ -27,7 +27,6 @@
 (install-package-if-missing 'js2-mode)
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
-(setq js2-basic-offset 2)
 (setq js2-bounce-indent-p t)
 
 ;; CoffeeScript Mode

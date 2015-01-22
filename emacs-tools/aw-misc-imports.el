@@ -63,5 +63,6 @@
 ;; Web Mode
 (install-package-if-missing 'web-mode)
 (require 'web-mode)
+(setq web-mode-code-indent-offset 2)
 
 (provide 'aw-misc-imports)
