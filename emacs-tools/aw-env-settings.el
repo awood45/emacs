@@ -64,4 +64,8 @@
 ;; Turn off Tool Tips
 (tooltip-mode -1)
 
+;; De-Dupe Filenames with path instead of <2>
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
 (provide 'aw-env-settings)
