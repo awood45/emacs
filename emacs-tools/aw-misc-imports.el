@@ -65,4 +65,8 @@
 (require 'web-mode)
 (setq web-mode-code-indent-offset 2)
 
+;; Haskell Mode
+(install-package-if-missing 'haskell-mode)
+(require 'haskell-mode)
+
 (provide 'aw-misc-imports)
