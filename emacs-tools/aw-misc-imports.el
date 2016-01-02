@@ -69,4 +69,8 @@
 (install-package-if-missing 'haskell-mode)
 (require 'haskell-mode)
 
+;; Elixir Mode
+(install-package-if-missing 'elixir-mode)
+(require 'elixir-mode)
+
 (provide 'aw-misc-imports)
