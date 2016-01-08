@@ -73,4 +73,12 @@
 (install-package-if-missing 'elixir-mode)
 (require 'elixir-mode)
 
+;; Idris Mode
+(install-package-if-missing 'idris-mode)
+(require 'idris-mode)
+
+;; Julia Mode
+(install-package-if-missing 'julia-mode)
+(require 'julia-mode)
+
 (provide 'aw-misc-imports)
