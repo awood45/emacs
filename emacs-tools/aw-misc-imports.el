@@ -89,4 +89,8 @@
                 ("\\.topml$" . tuareg-mode))
               auto-mode-alist))
 
+;; Io Mode
+(install-package-if-missing 'io-mode)
+(require 'io-mode)
+
 (provide 'aw-misc-imports)
