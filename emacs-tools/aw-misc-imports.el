@@ -81,4 +81,12 @@
 (install-package-if-missing 'julia-mode)
 (require 'julia-mode)
 
+;; OCaml Mode
+(install-package-if-missing 'tuareg)
+(require 'tuareg)
+(setq auto-mode-alist 
+      (append '(("\\.ml[ily]?$" . tuareg-mode)
+                ("\\.topml$" . tuareg-mode))
+              auto-mode-alist))
+
 (provide 'aw-misc-imports)
