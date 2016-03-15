@@ -93,4 +93,19 @@
 (install-package-if-missing 'io-mode)
 (require 'io-mode)
 
+;; Erlang Mode
+(setq load-path 
+      (cons "/usr/local/opt/erlang/lib/erlang/lib/tools-2.8.2/emacs" load-path))
+(setq erlang-root-dir "/usr/local/opt/erlang")
+(setq exec-path (cons "/usr/local/opt/erlang/bin" exec-path))
+(add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
+(add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode))
+(require 'erlang-start)
+
+;; Lua Mode
+(install-package-if-missing 'lua-mode)
+(require 'lua-mode)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
 (provide 'aw-misc-imports)
