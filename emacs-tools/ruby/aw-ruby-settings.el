@@ -20,6 +20,7 @@
 ;; along with it. If not, see <http://www.gnu.org/licenses/>.
 
 ;; Auto-Mode Configuration - Prefer Enhanced Ruby Mode
+(add-to-list 'auto-mode-alist '("\\.rb$"     . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rake$"     . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$"  . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru$"       . enh-ruby-mode))
