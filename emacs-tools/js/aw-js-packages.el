@@ -37,4 +37,8 @@
 (require 'coffee-mode)
 (setq coffee-tab-width 2)
 
+;; TypeScript Mode
+(install-package-if-missing 'typescript-mode)
+(require 'typescript-mode)
+
 (provide 'aw-js-packages)
