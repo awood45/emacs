@@ -39,4 +39,10 @@
 (setq org-default-notes-file (concat org-directory "/collect-local.org"))
 (define-key global-map "\C-cc" 'org-capture)
 
+;; Set Up Babel Code Executables
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((ruby . t)
+   (scheme . t)))
+
 (provide 'aw-org-settings)

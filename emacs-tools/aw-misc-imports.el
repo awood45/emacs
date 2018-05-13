@@ -108,4 +108,9 @@
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
+;; Scheme in Org-Mode
+(install-package-if-missing 'geiser)
+(require 'geiser)
+(setq geiser-default-implementation 'guile)
+
 (provide 'aw-misc-imports)
