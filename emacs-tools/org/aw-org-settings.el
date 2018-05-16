@@ -45,4 +45,7 @@
  '((ruby . t)
    (scheme . t)))
 
+;; Inline Code Syntax Highlighting
+(setq org-src-fontify-natively t)
+
 (provide 'aw-org-settings)
