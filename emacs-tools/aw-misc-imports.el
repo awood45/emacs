@@ -95,7 +95,7 @@
 
 ;; Erlang Mode
 (setq load-path 
-      (cons "/usr/local/opt/erlang/lib/erlang/lib/tools-2.8.2/emacs" load-path))
+      (cons "/usr/local/opt/erlang/lib/erlang/lib/tools-3.0.2/emacs" load-path))
 (setq erlang-root-dir "/usr/local/opt/erlang")
 (setq exec-path (cons "/usr/local/opt/erlang/bin" exec-path))
 (add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
