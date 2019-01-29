@@ -58,6 +58,9 @@
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
+;; Tide Hook for JS
+(add-hook 'js2-mode-hook #'setup-tide-mode)
+
 ;; JSX
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
