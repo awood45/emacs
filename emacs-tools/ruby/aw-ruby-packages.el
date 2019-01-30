@@ -46,9 +46,6 @@
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;;;; Vendored Dependencies
-;; Toggle allows you to switch between test and code files with a single chord.
-(require 'toggle)
-
 ;; Autotest automatically runs unit tests as you code in a buffer.
 (require 'autotest)
 
