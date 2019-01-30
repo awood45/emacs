@@ -22,11 +22,11 @@
 (require 'cl)
 
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+(add-to-list 'package-archives 
+             '("melpa" . "https://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize)
 
 (defun install-package-if-missing (package)
   (unless (package-installed-p package)
