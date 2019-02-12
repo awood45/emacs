@@ -94,13 +94,13 @@
 (require 'io-mode)
 
 ;; Erlang Mode
-(setq load-path 
-      (cons "/usr/local/opt/erlang/lib/erlang/lib/tools-3.0.2/emacs" load-path))
-(setq erlang-root-dir "/usr/local/opt/erlang")
-(setq exec-path (cons "/usr/local/opt/erlang/bin" exec-path))
-(add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
-(add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode))
-(require 'erlang-start)
+;(setq load-path 
+;      (cons "/usr/local/opt/erlang/lib/erlang/lib/tools-3.0.2/emacs" load-path))
+;(setq erlang-root-dir "/usr/local/opt/erlang")
+;(setq exec-path (cons "/usr/local/opt/erlang/bin" exec-path))
+;(add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
+;(add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode))
+;(require 'erlang-start)
 
 ;; Lua Mode
 (install-package-if-missing 'lua-mode)
@@ -117,5 +117,10 @@
 (install-package-if-missing 'dockerfile-mode)
 (require 'dockerfile-mode)
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+;; Python Support
+(install-package-if-missing 'elpy)
+(require 'elpy)
+(elpy-enable)
 
 (provide 'aw-misc-imports)
