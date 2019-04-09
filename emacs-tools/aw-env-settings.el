@@ -68,4 +68,8 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
+;; Implicit window splits are always along the horizontal axis
+(setq split-width-threshold 40)
+(setq split-height-threshold nil)
+
 (provide 'aw-env-settings)

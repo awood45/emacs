@@ -123,4 +123,10 @@
 (require 'elpy)
 (elpy-enable)
 
+;; Java Support
+(install-package-if-missing 'jdee)
+(require 'jdee)
+(custom-set-variables
+  '(jdee-server-dir "~/jdee"))
+
 (provide 'aw-misc-imports)
