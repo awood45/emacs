@@ -129,4 +129,8 @@
 (custom-set-variables
   '(jdee-server-dir "~/jdee"))
 
+;; Rust Support
+(install-package-if-missing 'rust-mode)
+(require 'rust-mode)
+
 (provide 'aw-misc-imports)

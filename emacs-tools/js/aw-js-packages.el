@@ -74,5 +74,8 @@
           (lambda ()
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
+;; enable typescript-tslint checker
+(with-eval-after-load 'flycheck
+  (flycheck-add-mode 'typescript-tslint 'web-mode))
 
 (provide 'aw-js-packages)
