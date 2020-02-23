@@ -24,12 +24,25 @@
 
 ;; org-mode TODO Keywords
 (setq org-todo-keywords
-      '((type "BACKLOG(b)" "TODO(t)" "WAITING(w)" "WIP(i)"
-              "|" "DONE(d)" "CANCELLED(c)")
+      '((type "TODO(t)" "WAITING(w)" "WIP"
+              "|" "DONE(d)" "CANCELLED")
+        (sequence "BACKLOG(b)" "ONDECK(o)" "PLAN(l)" "WIP(i)" "REVIEW(r)"
+                  "|" "COMPLETE(c)" "STOPPED(s)")
         (sequence "MAYBE(m)" "PROJECT(p)"
                   "|" "FINISHED(f) ABANDONED(a)")
         (sequence "APPT(a)"
                   "|" "DONE" "CANCELLED")))
+
+(setq org-agenda-custom-commands
+      '(("K" "Kanban View"
+         ((agenda)
+          (todo "ONDECK")
+          (todo "PLAN")
+          (todo "WIP")
+          (todo "REVIEW")))
+        ("B" "Backlog Grooming View"
+         ((agenda)
+          (todo "BACKLOG")))))
 
 ;; Alternate binding for moving Org tasks up and down.
 (define-key org-mode-map (kbd "M-p") 'org-metaup)
