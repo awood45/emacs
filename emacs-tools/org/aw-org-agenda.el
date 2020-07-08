@@ -24,14 +24,17 @@
 
 ;; org-mode TODO Keywords
 (setq org-todo-keywords
-      '((type "TODO(t)" "WAITING(w)" "WIP"
-              "|" "DONE(d)" "CANCELLED")
-        (sequence "BACKLOG(b)" "ONDECK(o)" "PLAN(l)" "WIP(i)" "REVIEW(r)"
+      '((type "BACKLOG(b)" "ONDECK(o)" "PLAN(l)" "WIP(i)" "REVIEW(r)"
                   "|" "COMPLETE(c)" "STOPPED(s)")
+        (sequence "TODO(t)" "WAITING(w)" "WIP"
+              "|" "DONE(d)" "CANCELLED(n)")
         (sequence "MAYBE(m)" "PROJECT(p)"
                   "|" "FINISHED(f) ABANDONED(a)")
         (sequence "APPT(a)"
-                  "|" "DONE" "CANCELLED")))
+                  "|" "DONE(d)" "CANCELLED(n)")
+        (sequence "GOAL(g)"
+                  "|" "DONE(d)" "FAILED(x)")
+        (sequence "TODO(t)" "READING(e)" "PAUSED(+)" "|" "DONE(d)")))
 
 (setq org-agenda-custom-commands
       '(("K" "Kanban View"
