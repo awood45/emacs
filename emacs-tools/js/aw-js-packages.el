@@ -31,6 +31,7 @@
 (defun fix-js2-tab ()
   (setq js2-basic-offset 2))
 (add-hook 'js2-mode-hook 'fix-js2-tab)
+(add-hook 'js2-mode-hook (lambda () (electric-layout-mode -1)))
 
 ;; CoffeeScript Mode
 (install-package-if-missing 'coffee-mode)
@@ -55,10 +56,10 @@
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
-
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 ;; Tide Hook for JS
+(add-hook 'js-mode-hook #'setup-tide-mode)
 (add-hook 'js2-mode-hook #'setup-tide-mode)
 
 ;; JSX
@@ -68,6 +69,7 @@
           (lambda ()
             (when (string-equal "jsx" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
+
 ;; TSX
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-hook 'web-mode-hook
