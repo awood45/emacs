@@ -72,4 +72,8 @@
 (setq split-width-threshold 40)
 (setq split-height-threshold nil)
 
+;; Default line number mode on
+(global-linum-mode t)
+(setq linum-format "%4d \u2502 ")
+
 (provide 'aw-env-settings)

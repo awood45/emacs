@@ -54,13 +54,34 @@
   (tide-hl-identifier-mode +1)
   (company-mode +1))
 
+;; Function to manually switch to a "React" developer setup in .js files
+(defun default-react-mode ()
+  (interactive)
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+  (add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "js" (file-name-extension buffer-file-name))
+              (setup-tide-mode)))))
+
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
-;; Tide Hook for JS
+;; Tide Hook for JS and Web Mode
 (add-hook 'js-mode-hook #'setup-tide-mode)
 (add-hook 'js2-mode-hook #'setup-tide-mode)
+
+;; Web Mode Setup
+(setq web-mode-content-types-alist '(("jsx" . "\\.[jt]sx?\\'")))
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-script-padding 2)
+(setq web-mode-block-padding 2)
+(setq web-mode-style-padding 2)
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-auto-closing t)
+(setq web-mode-enable-current-element-highlight t)
 
 ;; JSX
 (require 'web-mode)

@@ -43,9 +43,20 @@
           (todo "PLAN")
           (todo "WIP")
           (todo "REVIEW")))
+        ("M" "Project Idea View"
+         ((todo "MAYBE")))
+        ("P" "Project View"
+         ((todo "PROJECT")))
         ("B" "Backlog Grooming View"
-         ((agenda)
-          (todo "BACKLOG")))))
+         ((todo "BACKLOG")))
+        ("F" "Full Planning View"
+         ((todo "ONDECK")
+          (todo "PLAN")
+          (todo "WIP")
+          (todo "REVIEW")
+          (todo "BACKLOG")))
+        ("C" "Complete Task View"
+         ((todo "COMPLETE")))))
 
 ;; Alternate binding for moving Org tasks up and down.
 (define-key org-mode-map (kbd "M-p") 'org-metaup)
