@@ -26,12 +26,29 @@
 ;; JavaScript IDE Mode
 (install-package-if-missing 'js2-mode)
 (require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
+;(add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
 (setq js2-bounce-indent-p t)
 (defun fix-js2-tab ()
   (setq js2-basic-offset 2))
 (add-hook 'js2-mode-hook 'fix-js2-tab)
 (add-hook 'js2-mode-hook (lambda () (electric-layout-mode -1)))
+
+;; RJSX Mode
+;; Trying https://github.com/felipeochoa/rjsx-mode for better React support
+(install-package-if-missing 'rjsx-mode)
+(require 'rjsx-mode)
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . rjsx-mode))
+(setq js-indent-level 2)
+(setq sgml-basic-offset 2)
+
+;; JSX
+;(require 'web-mode)
+;(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+;(add-hook 'web-mode-hook
+;          (lambda ()
+;            (when (string-equal "jsx" (file-name-extension buffer-file-name))
+;              (setup-tide-mode))))
 
 ;; CoffeeScript Mode
 (install-package-if-missing 'coffee-mode)
@@ -55,13 +72,13 @@
   (company-mode +1))
 
 ;; Function to manually switch to a "React" developer setup in .js files
-(defun default-react-mode ()
-  (interactive)
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  (add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "js" (file-name-extension buffer-file-name))
-              (setup-tide-mode)))))
+;(defun default-react-mode ()
+;  (interactive)
+;  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+;  (add-hook 'web-mode-hook
+;          (lambda ()
+;            (when (string-equal "js" (file-name-extension buffer-file-name))
+;              (setup-tide-mode)))))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
@@ -82,14 +99,6 @@
 (setq web-mode-enable-auto-pairing t)
 (setq web-mode-enable-auto-closing t)
 (setq web-mode-enable-current-element-highlight t)
-
-;; JSX
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "jsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
 
 ;; TSX
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
