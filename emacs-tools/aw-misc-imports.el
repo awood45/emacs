@@ -123,14 +123,12 @@
 (require 'elpy)
 (elpy-enable)
 
-;; Java Support
-(install-package-if-missing 'jdee)
-(require 'jdee)
-(custom-set-variables
-  '(jdee-server-dir "~/jdee"))
-
 ;; Rust Support
 (install-package-if-missing 'rust-mode)
 (require 'rust-mode)
+
+;; Terraform Support
+(install-package-if-missing 'terraform-mode)
+(require 'terraform-mode)
 
 (provide 'aw-misc-imports)

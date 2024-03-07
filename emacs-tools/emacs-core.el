@@ -40,11 +40,3 @@
 ;; Org Mode
 (add-to-list 'load-path "~/emacs-tools/org")
 (require 'aw-org)
-
-;; Clojure Development
-(add-to-list 'load-path "~/emacs-tools/clojure")
-(require 'aw-clojure)
-
-;; Elm Development
-(add-to-list 'load-path "~/emacs-tools/elm")
-(require 'aw-elm)
